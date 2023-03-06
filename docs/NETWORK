@@ -20,6 +20,11 @@ We will create a new network, 192.168.140.0/24 that is local to the Pi.
 This can be done in /etc/rc.local so it is created at boot time.  It
 needs to be done _before_ the bridge code starts.
 
+Change the first line of the file to run the script with the bash shell:
+#!/bin/bash -e
+
+Then at the end, before the "exit 0" line add:
+
     BASE=192.168.140
     INT=lo
 
